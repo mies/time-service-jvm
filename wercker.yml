@@ -35,7 +35,10 @@ push-image:
             cmd: java -jar /pipeline/source/time-api.jar
             tag: time-api-$WERCKER_GIT_COMMIT
             ports: "8080"
-
+        
+        - script:
+            name: hello
+            code: env
 # Deploy to a Kubernetes cluster
 deploy-to-kubernetes:
     # We only need a minimal shell environment to run Kubectl.
